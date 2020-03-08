@@ -9,9 +9,10 @@ const mb = menubar({
     icon: path.join(__dirname, 'icons', 'on.png'),
     tooltip: "Violin",
     browserWindow: {
-        y: 40,
+        y: 32,
         width: 360,
-        height: 600
+        // height: 600
+        transparent: true
     }
 });
 

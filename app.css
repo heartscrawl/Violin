@@ -1,0 +1,89 @@
+/**
+ *   Set our variables.
+ */
+
+:root {
+    /* Colours */
+    --primary: #a52415;
+    --secondary: #6fc3ea;
+    --background: #f4f2e9;
+        --background-light: #fff;
+    --foreground: #312c24;
+        --foreground-light: #bbaf99;
+
+    /* Type */
+    --sans: "FreightSans Pro", "Freight Sans", sans-serif;
+    --serif: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+
+    /* Radii */
+    --radius-small: 6px;
+    --radius-medium: 10px;
+    --radius-large: 16px;
+
+    /* Arrow size */
+    --arrow-size: 10px;
+    --arrow-size-inverse: -10px;
+
+    /* Animation and transition */
+    --transition: .2s ease-in-out;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+}
+
+body, input {
+    font: 16px/25px var(--serif);
+    color: var(--foreground);
+}
+
+body {
+    margin-top: var(--arrow-size);
+}
+
+#app, #search {
+    transition: height var(--transition);
+}
+
+#app {
+    position: relative;
+    padding-top: 40px;
+    background: var(--primary);
+    border-radius: var(--radius-large);
+}
+    #app:before {
+        content: '';
+        position: absolute;
+        left: 50%;
+        top: var(--arrow-size-inverse);
+
+        display: block;
+        margin-left: var(--arrow-size-inverse);
+
+        border-left: var(--arrow-size) solid transparent;
+        border-right: var(--arrow-size) solid transparent;
+        border-bottom: var(--arrow-size) solid var(--primary);
+    }
+
+#search {
+    height: 150px;
+    background: var(--background);
+    border-radius: var(--radius-large);
+}
+    input[type=search] {
+        width: 100%;
+        padding: 18px 24px 18px 48px;
+
+        -webkit-appearance: none;
+        background: transparent;
+
+        outline: none;
+        border: none;
+    }
+        input[type=search]::placeholder {
+            color: var(--foreground-light);
+        }
